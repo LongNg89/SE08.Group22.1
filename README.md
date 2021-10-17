@@ -40,15 +40,15 @@ Thử nghiệm code script bằng Gcode để cho máy cắt CNC thực hiện s
 
 <a name="system-architecture"> </a>
 ## 4. System Architecture
-...
 
 <a name="technology-&-tools"> </a>
 ## 5. Technology & Tools
 * G-Code
 * Github
-* AlphaCAM Ultimate Stimulator
+* AlphaCAM Ultimate Simulator
 * DXF2GCODE
-* G-Code Stimulator
+* G-Code Simulator
+* Visual Studio Code
 
 
 <a name="report"> </a>
