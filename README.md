@@ -1,4 +1,4 @@
-# SE04-Nhom22.1
+# SE08-Nhom22.1
 Thử nghiệm code script bằng Gcode để cho máy cắt CNC thực hiện sản xuất đồ nội thất công nghiệp.
 
 ## Team Members:
@@ -11,8 +11,8 @@ Thử nghiệm code script bằng Gcode để cho máy cắt CNC thực hiện s
 1. [Idea](#idea)
 2. [Goals](#goals)
 3. [Objectives](#objectives)
-4. [System Architecture](#system-architecture)
-5. [Technology & Tools](#technology-&-tools)
+4. [Technology & Tools](#technology-&-tools)
+5. [System Architecture](#system-architecture)
 6. [Project Report](#report)
 
 <a name="idea"> </a>
@@ -33,16 +33,16 @@ Thử nghiệm code script bằng Gcode để cho máy cắt CNC thực hiện s
 
 <a name="goals"> </a>
 ## 2. Goals
+* Cắt được sản phẩm bằng máy CNC từ script G-Code.
 
 <a name="objectives"></a>
 ## 3. Objectives
-
-
-<a name="system-architecture"> </a>
-## 4. System Architecture
+* Sử dụng công cụ AlphaCAM để chuyển file DXF sang G-Code.
+* Tinh chỉnh, tối ưu hóa G-Code.
+* Từ G-Code đã có, sử dụng máy CNC cắt được sản phẩm hoàn chỉnh.
 
 <a name="technology-&-tools"> </a>
-## 5. Technology & Tools
+## 4. Technology & Tools
 * G-Code
 * Github
 * AlphaCAM Ultimate Simulator
@@ -50,6 +50,8 @@ Thử nghiệm code script bằng Gcode để cho máy cắt CNC thực hiện s
 * G-Code Simulator
 * Visual Studio Code
 
+<a name="system-architecture"> </a>
+## 5. System Architecture
 
 <a name="report"> </a>
 ## 6. Project Report
