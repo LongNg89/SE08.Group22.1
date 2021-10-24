@@ -22,7 +22,7 @@
   * Bước 5: Di chuyển bút 1 inch sang trái - `G1 X0`
       * `G1`: Tương tự như trên.
       * `X0`: Ra lệnh cho máy di chuyển đến X0 theo hướng X âm. Lệnh này sẽ đưa đầu máy sang trái 1 inch
-  * Bước 6: Nhấc bsut i inch khỏi bề mặt - `G1 Z1`
+  * Bước 6: Nhấc bút 1 inch khỏi bề mặt - `G1 Z1`
       * `G1`: Tương tự như trên
       * `Z1`: Ra lệnh cho máy di chuyển theo hướng Z dương 1 inch 
 
@@ -90,3 +90,78 @@ G94                 Di chuyển theo tốc độ cắt F
 G98                 Rút dao nhanh theo Z trong các lệnh khoan
 G99                 Rút dao nhanh theo R trong các lệnh khoan
 ```
+# Bảng các lệnh vận hành M
+```
+**Mã lệnh**         **Mô tả**
+M0                  Dừng chương trình
+M1                  Dừng chương trình kèm với lựa chọn (thay dao, ..)
+M2                  Hết chương trình
+M3/M4               Bật mô tơ trục chính theo chiều kim đồng hồ/ ngược chiều kim đồng hồ
+M5                  Dừng mô tơ trục chính   
+M6                  Thay dao (thủ công hoặc tự động)
+M7                  Bật phun sương (làm mát)
+M8                  Bật phun nước (làm mát)
+M9                  Tắt phun nước (làm mát)
+M30                 Hết chương trình, quay lại điểm đầu
+M47                 Chạy lại chương trình từ dòng lệnh đầu
+M48                 Bật ghi đè tốc độ trục chính và tốc độ cắt
+M49                 Tắt ghi đè tốc độ trục chính và tốc độ cắt
+M98                 Gọi chương trình con
+M99                 Kết thúc chương trình con, trở về chương trình chính
+```
+# Bảng liệt kê các thông số
+```
+**Mã lệnh**         **Mô tả**
+A                   Toạ độ góc trục A
+B                   Toạ độ góc trục B
+C                   Toạ độ góc trục C
+D                   Giá trị bù bán kính dao cắt
+F                   Tốc độ chạy dao khi cắt (in/phút hoặc mm/phút)
+H                   Bù chiều cao Z của dao cắt
+IJK                 Độ lệch tương đối với toạ độ X, Y, Z
+N                   Đánh số đầu dòng
+O                   Nhãn chương trình con
+P                   Dừng chuyển động các trục trong lúc gia công (ms hoặc s)
+Q                   Độ sâu của một lần khoan nhấp hoặc số lần lặp lại chương trình con
+R                   Toạ độ rút dao về trong các lệnh khoan
+S                   Tốc độ quay trục chính (vòng/phút)
+T                   Số hiệu dao cắt trong bảng thay dao
+XYZ                 Toạ độ Descartes của đầu dao
+```
+# Cấu trúc file chương trình
+* Dòng mở đầu và kết thúc chương trình bằng kí hiệu %.
+* Tên chương trình nằm tại dòng lệnh thứ hai và bắt đầu bằng chữ `O`. 
+* `Nxxx` tại đầu mỗi dòng giúp nhận biết vị trí dòng lệnh trong quá trình chạy chương trình.
+* Các lệnh gia công bắt đầu bằng chữ `G`.
+* Lệnh chọn dụng cụ cắt `T`.
+* Các biến thể hiện toạ độ `X,Y,Z,A, ..`
+* Thiết lập tốc độ trục chính `S`.
+* Khởi động mô tơ trục chính `M3`.
+* Thiết lập tốc độ cắt `F`.
+* Quá trình gia công...
+* Tắt mô tơ trục chính `M5`.
+* Kết thúc chương trình `M30`.
+* Các chú thích được đặt trong cặp `()`, máy sẽ báo lỗi nếu có các cặp ngoặc lồng nhau.
+ > Ví dụ file chương trình `PART2448.NC`:
+ > ```
+ > %
+ > O2448
+ > (TÊN CHƯƠNG TRÌNH - PART2448)
+ > N100 G21
+ > N110 G0 G17 G40 G49 G80 G90
+ > (MILLING TÔL D6.0MM 2 FLUTES - ALUMINIUM ALLOY MATERIALS)
+ > N120 T40 M6
+ > N130 G0 G90 G54 X4.409 Y1III.742 A0. S1500 M3
+ > N140 G43 H0 Z.5
+ > N150 Z.2
+ > N160 G1 Z-.05 F5.
+ >(...)
+ > N4070 G0 Z.5
+ > N4080 M5
+ > N4090 G0 Z100.
+ > N4100 G0 X0. Y0. A0.
+ > N4110 M5
+ > M30
+ > %
+ > ```
+
