@@ -3,7 +3,7 @@
 * Việc tuân thủ các tiêu chuẩn ít gặp vấn đề hơn khi sử dụng G-code được tạo bởi các gói CAM hiện đại, cung cấp nhiều bộ xử lý hậu kỳ để lựa chọn. Bộ xử lý hậu kỳ xuất ra G-code thích hợp cho một máy hoặc các dòng máy cụ thể. 
     * Bằng việc sử dụng các máy CNC hiện đại cùng với phần mềm, chúng ta sẽ không cần thiết phải nhập G-code một cách thủ công. Các phần mềm CAD/CAM và máy điều khiển sẽ làm thay công việc này.
 # Ví dụ hướng dẫn vẽ hình vuông bằng máy
-![content-table](https://f38-zpg.zdn.vn/3956706865987300749/39013be663a5abfbf2b4.jpg)
+![content-table](https://user-images.githubusercontent.com/89681261/138840158-22e65184-05e7-41aa-979a-e61ab59d7669.jpg)
 * ## Phân tích:
   * Bước 1: Đặt bút lên giấy - `G20 F20 X0 Y0 Z0`
       * `G20`: Sử dụng hệ đo lường Anh (đơn vị inches). Để đổi sang hệ Metric (đơn vị mm), dùng lệnh `G21`.
@@ -26,7 +26,7 @@
       * `G1`: Tương tự như trên
       * `Z1`: Ra lệnh cho máy di chuyển theo hướng Z dương 1 inch 
 
-* Thứ tự các lệnh
+* ## Thứ tự các lệnh
   * Cũng giống như phương trình toán học, G-code cũng có thứ tự ưu tiên các lệnh như sau (chú thích sẽ được thông dịch đầu tiên và các lệnh đổi công cụ cuối cùng):
   ```
   Cao nhất:  Chú thích (Comments)
@@ -149,7 +149,7 @@ XYZ                 Toạ độ Descartes của đầu dao
  > (TÊN CHƯƠNG TRÌNH - PART2448)
  > N100 G21
  > N110 G0 G17 G40 G49 G80 G90
- > (MILLING TÔL D6.0MM 2 FLUTES - ALUMINIUM ALLOY MATERIALS)
+ > (DỤNG CỤ PHAY 2 ỐNG D6.0MM - VẬT LIỆU HỢP KIM NHÔM)
  > N120 T40 M6
  > N130 G0 G90 G54 X4.409 Y1III.742 A0. S1500 M3
  > N140 G43 H0 Z.5
@@ -165,22 +165,22 @@ XYZ                 Toạ độ Descartes của đầu dao
  > %
  > ```
 
-### Tập lệnh G
+### Một số lệnh trong tập lệnh G
 #### 1. `G00`- Di chuyển dao nhanh
-   ![G00](https://f33-zpg.zdn.vn/8846968994598848248/b8f7e7854cc98497ddd8.jpg)
+   ![G00](https://user-images.githubusercontent.com/89681261/138840088-b682b3b0-84dd-40d6-81b3-6284102e91ba.jpg)
    * Dịch chuyển dao nhanh trên một đường thẳng đối với các toạ độ XYZ và di chuyển góc quay với các trục ABC, với tốc độ tối đa của máy. Trong quá trình di chuyển dao không cắt vào phôi (nếu để dao cắt vào phôi có thể gây gãy dao).
    * Tốc độ tối đa là tốc độ lớn nhất cho phép của máy (trong mach3 tốc độ này được xác định bởi **Velocity** trong màn hình **ConfigMotor turning and set up**).
    * Lệnh G00 thường dùng khi cần di chuyển đầu dao nhanh đến gần vị trí phôi, hoặc rút dao nhanh sau khi hoàn tất một chu trình gia công.
 #### 2. `G01`- Cắt theo đường thẳng, tốc độ cắt F
-   ![G01](https://f20-zpg.zdn.vn/8259138666264745130/e9c540a6e7ea2fb476fb.jpg)
+   ![G01](https://user-images.githubusercontent.com/89681261/138840129-f33c0500-8708-4d6b-8469-b41d06fa1bf5.jpg)
    * Di chuyển dao từ vị trí hiện thời đến vị trí mới kèm theo quá trình cắt phôi. Tốc độ di chuyển dao hoặc phôi được thiết lập bởi lệnh F trước đó.
 #### 3. `G02`- Cắt theo đường tròn, dao cắt di chuyển thuận chiều kim đồng hồ
-   ![G02](https://f49-zpg.zdn.vn/5889735925025502161/b94e10d4b6987ec62789.jpg)
+   ![G02](https://user-images.githubusercontent.com/89681261/138840138-ae4f4fc2-3c3e-4f04-880f-104fd81f7613.jpg)
    * Có 2 cách sử dụng lệnh G02: 
      * Sử dụng tham số IJ: `G02 toạ_độ_điểm_cuối_XY toạ_độ_tâm_IJ`
      * Sử dụng bán kính R: `G02 toạ_độ_điểm_cuối_XY bán_kính_R`
 #### 4. `G03`- Cắt theo đường tròn, dao cắt di chuyển ngược chiều kim đồng hồ
-   ![G03](https://f42-zpg.zdn.vn/5710622757641502544/d4a195fb4bb783e9daa6.jpg)
+   ![G03](https://user-images.githubusercontent.com/89681261/138840147-99eb3a36-acf2-43ee-a6b5-84b727ddbc66.jpg)
    * Tương tự, cũng có 2 cách sử dụng lệnh G03: 
      * Sử dụng tham số IJ: `G03 toạ_độ_điểm_cuối_XY toạ_độ_tâm_IJ`
      * Sử dụng bán kính R: `G03 toạ_độ_điểm_cuối_XY bán_kính_R`
@@ -251,3 +251,8 @@ XYZ                 Toạ độ Descartes của đầu dao
      G1 X109.66 Y43 (Di chuyển từ điểm A đến B)
      G15 (Chuyển về toạ độ Descartes)
      ```
+   * >Cách tính toạ độ cực:
+      * Từ toạ độ tuyệt đối của A là A(20,50), tính được OA = √(20^2+50^2) = 10√29 ≈ 53.85, góc xOA = arccos(20/10√ 29) ≈ 68°. 
+      Vậy toạ độ cực của A là r(A)=(53.85,68°)
+      * Từ toạ độ tuyệt đối của B là B(80,75), tính được OB = √(80^2+75^2) = 5√481 ≈ 109.66, góc xOB = arccos(80/5√481) ≈ 43°. 
+      Vậy toạ độ cực của B là r(B)=(109.66,43°)
