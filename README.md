@@ -37,9 +37,6 @@ Thử nghiệm code script bằng Gcode để cho máy cắt CNC thực hiện s
 
 <a name="objectives"></a>
 ## 3. Objectives
-* Sử dụng công cụ AlphaCAM để chuyển file DXF sang G-Code.
-* Tinh chỉnh, tối ưu hóa G-Code.
-* Từ G-Code đã có, sử dụng máy CNC cắt được sản phẩm hoàn chỉnh.
 
 <a name="technology-&-tools"> </a>
 ## 4. Technology & Tools
