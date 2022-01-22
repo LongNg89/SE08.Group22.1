@@ -42,9 +42,9 @@ Thử nghiệm code script bằng Gcode để cho máy cắt CNC thực hiện s
 ## 4. Technology & Tools
 * G-Code
 * Github
-* AlphaCAM Ultimate Simulator
+* Sketchup
+* AutoCAD
 * DXF2GCODE
-* G-Code Simulator
 * Visual Studio Code
 
 <a name="system-architecture"> </a>
